@@ -3,7 +3,7 @@ import { NextResponse } from "next/server";
 import {
   sendLoginNotification,
   getClientDetails,
-} from "../../../../../../goodlucksatta/src/lib/email.js";
+} from "../../../../lib/email";
 
 export async function POST(request) {
   try {
