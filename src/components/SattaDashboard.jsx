@@ -59,7 +59,7 @@ const SattaDashboard = ({
         {/* Current Featured Game */}
         <div className="rounded-xl text-center">
           <div className="pt-20 pb-8">
-            <p className="pb-8 mt-12 px-3 md:mt-16 lg:mt-24 px-4 text-2xl md:text-3xl font-semibold">
+            <p className="pb-8 mt-12 px-3 md:mt-16 lg:mt-24 text-2xl md:text-3xl font-semibold">
               <Typewriter
                 words={["✨ ईमानदारी ही खाईवाल BHAI की पहचान है। 😎"]}
                 cursor
