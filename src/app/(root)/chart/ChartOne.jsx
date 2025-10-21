@@ -11,15 +11,15 @@ const ChartSattaTable = () => {
     href2: `${game.key.replace("_", "-")}-yearly-chart-2024`,
     currentYear: `${game.currentYear}`,
     lastYear: `${game.lastYear}`,
-    name:`${game.name}`
+    name: `${game.name}`
   }));
 
   return (
     <>
-      <div className="overflow-x-auto mt-24">
+      <div className="overflow-x-auto mt-2">
         <p className="pb-8 mt-5 text-center px-4 text-2xl md:text-3xl font-semibold">
           <Typewriter
-            words={["✨ ईमानदारी ही खाईवाल BHAI की पहचान है। 😎"]}
+            words={["ईमानदारी ही हमारी पहचान है।"]}
             cursor
             cursorBlinking={false}
             cursorStyle=""
@@ -35,7 +35,7 @@ const ChartSattaTable = () => {
             </tr>
           </thead>
           <tbody>
-            {sattaLinks.map((link,index) => (
+            {sattaLinks.map((link, index) => (
               <tr key={index}
                 className="bg-[linear-gradient(361deg,#ff7500e0,#ff7a20_0%,#ff3a11d4_100%,#ff0004ad)] font-semibold"
               >

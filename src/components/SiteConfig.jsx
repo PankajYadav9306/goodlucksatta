@@ -87,7 +87,7 @@ const SiteConfig = ({ showConfig, setShowConfig, onConfigSaved }) => {
 
   if (!showConfig) return null;
   return (
-    <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
+    <div className="fixed inset-0 bg-black/80 flex items-center justify-center z-50 p-4">
       <div className="bg-white/15 backdrop-blur-lg border border-white/20 rounded-2xl p-6 w-full max-w-3xl max-h-[90vh] overflow-y-auto">
         <h3 className="text-white text-xl mb-6">Multi-Site Configuration</h3>
 
@@ -95,7 +95,7 @@ const SiteConfig = ({ showConfig, setShowConfig, onConfigSaved }) => {
         <div className="mb-6 p-4 bg-white/10 rounded-lg border border-white/20">
           <h4 className="text-white text-lg mb-4 flex items-center">
             <div className="w-3 h-3 bg-blue-400 rounded-full mr-2"></div>
-            Good Luck Satta Configuration
+            t1 Satta Configuration
           </h4>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div>
@@ -253,7 +253,7 @@ const SiteConfig = ({ showConfig, setShowConfig, onConfigSaved }) => {
           <button
             onClick={handleConfigSave}
             disabled={configLoading}
-            className="flex-1 bg-gradientmidyellow text-white py-3 px-4 rounded-lg roboto hover:opacity-90 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
+            className="flex-1 bg-gradient2 text-white py-3 px-4 rounded-lg roboto hover:opacity-90 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
           >
             {configLoading ? (
               <div className="flex items-center justify-center">

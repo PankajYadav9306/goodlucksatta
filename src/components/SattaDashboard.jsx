@@ -58,10 +58,10 @@ const SattaDashboard = ({
       <div className="mx-auto bg-white">
         {/* Current Featured Game */}
         <div className="rounded-xl text-center">
-          <div className="pt-20 pb-8">
-            <p className="pb-8 mt-12 px-3 md:mt-16 lg:mt-24 text-2xl md:text-3xl font-semibold">
+          <div>
+            <p className="pb-8 mt-2 px-3 text-2xl md:text-3xl font-semibold">
               <Typewriter
-                words={["✨ ईमानदारी ही खाईवाल BHAI की पहचान है। 😎"]}
+                words={["ईमानदारी ही हमारी पहचान है।"]}
                 cursor
                 cursorBlinking={false}
                 cursorStyle=""
@@ -71,11 +71,6 @@ const SattaDashboard = ({
             <h2 className="text-4xl px-3 text-shadow-text-main bg-gradient-to-r via-yellow-400 to-orange-500 from-orange-500 py-5 lg:text-5xl text-white font-semibold text-theme-accent">
               👑 {displaySiteName} 👑
             </h2>
-            <p className="pb-12 mt-10 px-3 text-black text-2xl md:text-3xl font-semibold">
-              📰 यही आती है सबसे पहले खबर ⏳
-              <br />
-              🚀 SUPER FAST RESULTS ⚡
-            </p>
           </div>
         </div>
 
@@ -88,7 +83,7 @@ const SattaDashboard = ({
           todayResults={todayResults}
           yesterdayResults={yesterdayResults}
         />
-       
+
         {/* Chart Grid */}
         <div>
           <div className=" bg-white pb-5 text-center">

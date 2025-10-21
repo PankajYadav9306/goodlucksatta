@@ -35,7 +35,7 @@ export default async function RootLayout({ children }) {
         <Link
           href="https://goodlucksatta.in/"
           target="_blank"
-          className="text-green-800 duration-200 font-bold hover:text-purple-900"
+          className="text-green-800 duration-200 font-bold hover:text-orange-900"
         >
           http:/goodlucksatta.in
         </Link>{" "}

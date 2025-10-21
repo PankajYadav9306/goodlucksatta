@@ -51,8 +51,8 @@ const GamePage = ({ data, setting, disawarData }) => {
           )}
         </div>
       </div>
-      <div className="p-3 text-center w-full mx-auto">
-        <p className="text-3xl font-black text-black mb-4">DISAWAR</p>
+      <div className="p-3 text-center w-full mx-auto bg-gradient-to-r from-orange-500 via-yellow-400 to-orange-500 py-2.">
+        <p className="text-3xl font-bold text-black mb-4">DISAWAR</p>
         <div className="flex items-center gap-3 text-black justify-center max-w-[350px] mx-auto">
           <span className="text-xl font-semibold">
             {disawarData?.yesterday || "--"}
@@ -75,14 +75,13 @@ const GamePage = ({ data, setting, disawarData }) => {
       </div>
       {/* === BOTTOM STATIC SECTION === */}
       <section className="flex flex-col md:flex-row md:space-x-1 bg-white">
-        <div className="text-center w-full">
-          <div className="bg-gradient-to-r from-orange-500 via-yellow-400 to-orange-500 py-2.5 m-0 font-semibold">
-            <p className="text-4xl max-sm:text-lg mt-2 mb-0 md:my-5 text-white max-md:text-2xl">
-              -- सीधे सट्टा कंपनी का No. 1 खाईवाल --
-            </p>
-          </div>
-          <div className="flex-1 my-4 max-w-[1000px] mx-auto px-4 max-sm:px-2 pt-4 pb-6 text-base font-semibold leading-6 text-gray-900 min-h-1 bg-gradient-to-b from-yellow-300 to-orange-500">
-            <div className="bg-white py-3 border-black border-dashed border-[1px]">
+        <div className="text-center w-full p-6">
+          <div className="flex-1 mx-auto px-4 max-sm:px-2 pb-6 text-base font-semibold text-gray-900 rounded-2xl bg-gradient-to-b from-yellow-300 to-orange-500 border-black border-dashed border-[1px]">
+            <div className="py-3">
+
+              <p className="text-lg lg:text-xl mt-2 mb-0 md:my-5 text-black max-md:text-2xl">
+                -- सीधे सट्टा कंपनी का No. 1 खाईवाल --
+              </p>
               <p className="uppercase mb-2 font-bold text-base lg:text-xl">
                 ♕♕ &nbsp;TEJU BHAI KHAIWAL &nbsp;♕♕
               </p>
@@ -90,41 +89,32 @@ const GamePage = ({ data, setting, disawarData }) => {
                 {schedule.map((game, index) => (
                   <div
                     key={index}
-                    className="flex justify-between max-sm:text-lg text-xl items-center font-semibold py-0.5"
+                    className="flex justify-between text-sm items-center font-semibold py-1"
                   >
-                    <span className="flex items-center gap-1 text-nowrap">
-                      <span>🗺️</span>
+                    <span className="flex items-center gap-1 text-nowrap w-[130px] truncate">
+                      <span>⏰</span>
                       {game.name}
                     </span>
                     <span>←—→</span>
                     <span className="text-nowrap">
-                      {game.time} <span>⏰</span>
+                      {game.time}
                     </span>
                   </div>
                 ))}
               </div>
             </div>
 
-            <p className="mt-5 text-white text-xl">💸 Payment Option 💸</p>
-            <p className="text-white">
-              PAYTM//BANK TRANSFER//PHONE PAY//GOOGLE PAY =&lt; ⏺️
-              {setting?.paymentNumber}⏺️
+
+            <p className="text-black my-3">
+              👑👑जोड़ी रेट👑👑
               <br />
-              ==========================
-              <br />
-              ==========================
+              <p className="mt-2"> जोड़ी रेट 10-------{setting?.rate}</p>
+              <p>हरूफ रेट 100-----{setting?.rate}</p>
             </p>
-            <p className="text-white">
-              🤑Rate list💸
-              <br />
-              जोड़ी रेट 10-------{setting?.rate}
-              <br />
-              हरूफ रेट 100-----{setting?.rate}
-            </p>
-            <p className="uppercase text-white">
+            <p className="uppercase text-black">
               ♕♕ &nbsp;TEJU BHAI KHAIWAL &nbsp;♕♕
             </p>
-            <p className="text-white">
+            <p className="text-black">
               Game play करने के लिये नीचे लिंक पर क्लिक करे
             </p>
             <div className="mx-auto max-w-[300px] mt-4 hover:scale-110 transition-all duration-300">

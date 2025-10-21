@@ -6,11 +6,11 @@ import React from "react";
 
 const Contact = ({ setting }) => {
   return (
-    <div className="mx-auto mt-24">
-      <div className="flex flex-col justify-center items-center bg-gray-100">
+    <div className="mx-auto">
+      <div className="flex flex-col justify-center items-center">
         <h1 className="text-3xl max-sm:text-xl text-center px-4 mt-5 font-bold text-gray-800">
           <Typewriter
-            words={["✨ ईमानदारी ही खाईवाल BHAI की पहचान है। 😎"]}
+            words={["ईमानदारी ही हमारी पहचान है।"]}
             cursor
             cursorBlinking={false}
             cursorStyle=""
