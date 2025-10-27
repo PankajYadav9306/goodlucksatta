@@ -9,8 +9,8 @@ const ChartSattaTable = () => {
     id: game.order,
     href: `${game.key.replace("_", "-")}-yearly-chart-2025`,
     href2: `${game.key.replace("_", "-")}-yearly-chart-2024`,
-    currentYear: `${game.currentYear}`,
-    lastYear: `${game.lastYear}`,
+    currentYear: `2025`,
+    lastYear: '2024',
     name: `${game.name}`
   }));
 
