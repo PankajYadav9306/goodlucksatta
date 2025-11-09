@@ -52,7 +52,7 @@ const Navbar = () => {
           showNavbar ? "translate-y-0" : "-translate-y-full"
         }`}
       >
-        <div className="container max-w-[1240px] mx-auto px-3 sm:px-4 py-5">
+        <div className="mx-auto px-4 sm:px-6 py-5">
           <div className="grid grid-cols-3 sm:gap-3 gap-2">
             {sattaLinks.map((link) => (
               <Link
@@ -60,7 +60,7 @@ const Navbar = () => {
                 key={link.id}
                 className="bg-orange-500 border hover:border-orange-500 border-black text-white hover:text-orange-600 text-center hover:bg-yellow-400 flex items-center justify-center px-2 sm:px-5 md:px-6 py-2 sm:py-3 rounded cursor-pointer transition"
               >
-                <p className="text-base max-sm:text-sm m-0 font-bold">
+                <p className="text-base max-sm:text-sm m-0 font-bold uppercase">
                   {link.title}
                 </p>
               </Link>

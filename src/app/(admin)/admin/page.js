@@ -563,7 +563,7 @@ const AdminDashboard = () => {
                       setShowCurrentMonthOnly(false);
                     }
                   }}
-                  className="px-3 py-2 bg-[#CECECE] w-full border border-black/20 rounded-lg text-black placeholder-black/50 focus:outline-none focus:ring-2 focus:ring-orange-600"
+                  className="px-3 py-2 bg-[#CECECE] w-full max-sm:max-w-[170px] border border-black/20 rounded-lg text-black placeholder-black/50 focus:outline-none focus:ring-2 focus:ring-orange-600"
                   placeholder="Search by date"
                 />
                 <select

@@ -16,7 +16,7 @@ const GamePage = ({ data, setting, disawarData }) => {
     { name: "GALI ", time: "11:30 PM", number: "41" },
     { name: "DISAWAR ", time: "04:50 PM", number: "11" },
   ];
-
+  const currentYear = new Date().getFullYear();
   return (
     <div className="min-h-screen bg-gray-100">
       {/* === TOP DYNAMIC SECTION === */}
@@ -26,7 +26,7 @@ const GamePage = ({ data, setting, disawarData }) => {
         </div>
         <hr className="border-dashed w-full mx-auto my-3" />
 
-        <div className="flex text-2xl sm:text-3xl md:text-4xl uppercase mx-auto text-center w-full font-semibold flex-col gap-3 sm:gap-5 items-center justify-center">
+        <div className="flex uppercase mx-auto text-center w-full font-semibold flex-col gap-3 sm:gap-5 items-center justify-center">
           {/* ✅ Previous game */}
           {data && (
             <>
@@ -37,7 +37,7 @@ const GamePage = ({ data, setting, disawarData }) => {
 
               {/* ✅ Next game (WAITING) */}
 
-              <p className="text-[#fc6311]">
+              <p className="text-[#fc6311] text-[28px]">
                 {data.waitingGame.replace("_", " ")}
               </p>
               <Image
@@ -52,14 +52,18 @@ const GamePage = ({ data, setting, disawarData }) => {
         </div>
       </div>
       <div className="p-3 text-center w-full mx-auto bg-gradient-to-r from-orange-500 via-yellow-400 to-orange-500 py-2.">
-        <p className="text-3xl font-bold text-black mb-4">DISAWAR</p>
+        <Link href={`/disawer-yearly-chart-${currentYear}`} className="text-3xl font-bold text-black mb-4">DISAWAR</Link>
         <div className="flex items-center gap-3 text-black justify-center max-w-[350px] mx-auto">
           <span className="text-xl font-semibold">
             {disawarData?.yesterday || "--"}
           </span>
-          <span className="px-1 border bg-green-500 border-black rounded-md mx-2">
-            ➜
-          </span>
+          <Image
+            className="mx-4"
+            src="https://cdn.prod.website-files.com/67a6672d42bf0f0674721094/67a68eca12044dd0fb8bdf06_arrow.gif"
+            alt="Arrow"
+            width={20}
+            height={20}
+          />
           <span className="text-xl text-black font-semibold">
             {disawarData?.today || (
               <Image
@@ -75,7 +79,7 @@ const GamePage = ({ data, setting, disawarData }) => {
       </div>
       {/* === BOTTOM STATIC SECTION === */}
       <section className="flex flex-col md:flex-row md:space-x-1 bg-white">
-        <div className="text-center w-full p-6">
+        <div className="text-center w-full px-3 sm:px-6 p-6">
           <div className="flex-1 mx-auto px-4 max-sm:px-2 pb-6 text-base font-semibold text-gray-900 rounded-2xl bg-gradient-to-b from-yellow-300 to-orange-500 border-black border-dashed border-[1px]">
             <div className="py-3">
 
@@ -95,7 +99,13 @@ const GamePage = ({ data, setting, disawarData }) => {
                       <span>⏰</span>
                       {game.name}
                     </span>
-                    <span>←—→</span>
+                    <Image
+                      className="max-w-[60px] sm:max-w-[100px] w-full"
+                      src="https://cdn.prod.website-files.com/67a6672d42bf0f0674721094/67a9da533c0090c26d77ef6b_Vector.svg"
+                      alt="Example image"
+                      width={100}
+                      height={20}
+                    />
                     <span className="text-nowrap">
                       {game.time}
                     </span>
@@ -111,10 +121,10 @@ const GamePage = ({ data, setting, disawarData }) => {
               <p className="mt-2"> जोड़ी रेट 10-------{setting?.rate}</p>
               <p>हरूफ रेट 100-----{setting?.rate}</p>
             </p>
-            <p className="uppercase text-black">
+            <p className="uppercase text-black mb-1">
               ♕♕ &nbsp;TEJU BHAI KHAIWAL &nbsp;♕♕
             </p>
-            <p className="text-black">
+            <p className="text-black max-sm:text-base">
               Game play करने के लिये नीचे लिंक पर क्लिक करे
             </p>
             <div className="mx-auto max-w-[300px] mt-4 hover:scale-110 transition-all duration-300">

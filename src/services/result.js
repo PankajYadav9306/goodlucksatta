@@ -120,8 +120,8 @@ export async function getDisawarData() {
   console.log('Fetching Disawar data for:', { today, yDate }); // Debug
   
   const query = `{
-    "today": *[_type == "result" && game == "disawar" && date == $today][0].resultNumber,
-    "yesterday": *[_type == "result" && game == "disawar" && date == $yDate][0].resultNumber
+    "today": *[_type == "result" && game == "disawer" && date == $today][0].resultNumber,
+    "yesterday": *[_type == "result" && game == "disawer" && date == $yDate][0].resultNumber
   }`;
 
   try {
