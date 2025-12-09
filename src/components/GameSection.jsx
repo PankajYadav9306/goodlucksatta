@@ -130,7 +130,7 @@ const GamePage = ({ data, setting, disawarData }) => {
             <div className="mx-auto max-w-[300px] mt-4 hover:scale-110 transition-all duration-300">
               <Link
                 target="_blank"
-                href={`https://wa.me/+${setting?.whatsappNumber}`}
+                href={`https://wa.me/+91${setting?.whatsappNumber}`}
               >
                 <Image
                   className="max-sm:w-[200px] mx-auto max-sm:h-16"

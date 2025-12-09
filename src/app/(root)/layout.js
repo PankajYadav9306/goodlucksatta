@@ -22,7 +22,7 @@ export default async function RootLayout({ children }) {
       <Link
         className="fixed bottom-6 right-6 hover:scale-110 transition-transform z-50"
         target="_blank"
-        href={`https://wa.me/+${setting?.site2_whatsappNumber}`}
+        href={`https://wa.me/+91${setting?.site2_whatsappNumber}`}
       >
         <Image
           className="max-sm:!size-14"
