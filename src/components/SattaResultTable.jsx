@@ -39,11 +39,8 @@ const SattaResultTable = ({ todayResults = [], yesterdayResults = [] }) => {
     }
 
     return (
-      <div
-        className="flex justify-center"
-        style={{ marginBottom: 0, letterSpacing: "2px", fontSize: "22px" }}
-      >
-        <span className="text-lg lg:text-xl font-bold tracking-widest text-black">
+      <div className="flex justify-center">
+        <span className="text-lg lg:text-xl font-black tracking-widest text-violet-400">
           {result}
         </span>
       </div>
@@ -51,55 +48,53 @@ const SattaResultTable = ({ todayResults = [], yesterdayResults = [] }) => {
   };
 
   return (
-    <>
-      <article className="p-0">
-        <div className="relative p-0 overflow-x-auto">
-          <table className="w-full text-sm text-left text-gray-500 border-collapse border-gray-400">
-            {/* Table Header */}
-            <thead className="text-base text-red-800 bg-gradient2">
-              <tr>
-                <th className="text-center border border-gray-800 py-3 w-[37%]">
-                  सट्टा का नाम
-                </th>
-                <th className="py-3 text-center border border-gray-800">
-                  कल आया था
-                </th>
-                <th className="py-3 text-center border border-gray-800">
-                  आज का रिज़ल्ट
-                </th>
+    <article className="px-2 md:px-4 mt-4">
+      <div className="relative overflow-x-auto rounded-2xl shadow-sm border border-slate-700">
+        <table className="w-full text-sm text-left border-collapse">
+          {/* Table Header */}
+          <thead className="text-base bg-gradient-to-r from-violet-700 to-violet-600">
+            <tr>
+              <th className="text-center text-white font-bold border border-violet-600 py-4 w-[37%]">
+                🎮 सट्टा का नाम
+              </th>
+              <th className="py-4 text-center text-violet-100 font-bold border border-violet-600">
+                ⏮️ कल आया था
+              </th>
+              <th className="py-4 text-center text-violet-100 font-bold border border-violet-600">
+                🎯 आज का रिज़ल्ट
+              </th>
+            </tr>
+          </thead>
+          {/* Table Body */}
+          <tbody>
+            {sattaGames.map((game, index) => (
+              <tr key={game.id} className="border-b border-slate-700 hover:bg-slate-700/50 transition-colors duration-200 bg-slate-800/50">
+                {/* Game Name Cell */}
+                <td className="py-3 px-3 text-center font-bold border border-slate-700 bg-slate-800">
+                  <p className="text-base text-amber-500 w-full lg:text-lg font-bold">
+                    {game.displayName}
+                  </p>
+                  <span className="text-slate-400 text-sm font-medium">{game.time}</span>
+                </td>
+                {/* Yesterday Result Cell */}
+                <td className="text-center bg-slate-800/50 border border-slate-700 p-3">
+                  <div className="text-lg lg:text-xl font-bold tracking-widest text-slate-300">
+                    {game.yesterdayResult}
+                  </div>
+                </td>
+                {/* Today Result Cell */}
+                <td className="text-center bg-slate-800/50 border border-slate-700 p-3">
+                  <ResultCell
+                    result={game.todayResult}
+                    isLoading={game.isLoading}
+                  />
+                </td>
               </tr>
-            </thead>
-            {/* Table Body */}
-            <tbody>
-              {sattaGames.map((game) => (
-                <tr key={game.id}>
-                  {/* Game Name Cell */}
-                  <td className="py-2 px-2 text-center font-bold text-white border h-full border-gray-800 bg-gradient2">
-                    <p className="text-base text-white w-full lg:text-xl mt-1 text-center">
-                      {game.displayName}{" "}
-                    </p>
-                      <span className="max-[502px]:block text-sm md:text-base">{game.time}</span>
-                  </td>
-                  {/* Yesterday Result Cell */}
-                  <td className="text-center bg-white border !p-0 !m-0 !spacing-0 border-gray-800 yesterday-number">
-                    <div className="text-lg lg:text-xl font-bold tracking-widest text-black">
-                      {game.yesterdayResult}
-                    </div>
-                  </td>
-                  {/* Today Result Cell */}
-                  <td className="text-center bg-white border border-gray-800">
-                    <ResultCell
-                      result={game.todayResult}
-                      isLoading={game.isLoading}
-                    />
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-      </article>
-    </>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </article>
   );
 };
 

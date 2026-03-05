@@ -3,11 +3,11 @@ import SattaDashboard from "@/components/SattaDashboard";
 import {
   getTodayResult,
   getYesterdayResults,
-  getSettings,
   getLastResult,
   getMonthlyResults,
   getDisawarData,
 } from "@/services/result";
+import { getSettingsFromDB, buildSiteConfig } from "@/services/settingsServer";
 
 export const metadata = {
   title: "Good Luck Satta",
@@ -22,9 +22,12 @@ export default async function Home() {
       getYesterdayResults(),
       getLastResult(),
       getDisawarData(),
-      getSettings(),
+      getSettingsFromDB(),
     ]);
-console.log(disawarData," disawarData disawarData")
+
+  console.log("Settings from DB:", JSON.stringify(settings?.khaiwalSection1, null, 2));
+  console.log("Settings from DB Section 2:", JSON.stringify(settings?.khaiwalSection2, null, 2));
+
   // Get current month's results
   const currentDate = new Date();
   const monthlyResults = await getMonthlyResults(
@@ -32,15 +35,8 @@ console.log(disawarData," disawarData disawarData")
     currentDate.getFullYear()
   );
 
-  // Site 1 configuration
-  const siteConfig = {
-    siteName: "Good Luck Satta",
-    contactName: settings?.site2_contactName || settings?.contactName || "",
-    whatsappNumber:
-      settings?.site2_whatsappNumber || settings?.whatsappNumber || "",
-    paymentNumber: settings?.site2_paymentNumber || "",
-    rate: settings?.site2_rate || "",
-  };
+  // Build site config with khaiwal sections
+  const siteConfig = buildSiteConfig(settings);
 
   return (
     <SattaDashboard

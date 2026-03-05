@@ -30,11 +30,9 @@ const DateTime = () => {
     return () => clearInterval(interval);
   }, []);
 
-    return (
-      <>
-        <p className="text-lg font-semibold">{dateTime}</p>
-      </>
-    );
+  return (
+    <p className="text-lg font-semibold text-slate-700">{dateTime}</p>
+  );
 };
 
 export default DateTime;

@@ -5,19 +5,24 @@ import { Typewriter } from "react-simple-typewriter";
 import { GAMES } from "@/utils/gameConfig";
 
 const ChartSattaTable = () => {
+  // Dynamically calculate current and previous year
+  const currentYear = new Date().getFullYear();
+  const previousYear = currentYear - 1;
+
   const sattaLinks = GAMES.map((game) => ({
     id: game.order,
-    href: `${game.key.replace("_", "-")}-yearly-chart-2025`,
-    href2: `${game.key.replace("_", "-")}-yearly-chart-2024`,
-    currentYear: `2025`,
-    lastYear: '2024',
+    href: `${game.key.replace("_", "-")}-yearly-chart-${currentYear}`,
+    href2: `${game.key.replace("_", "-")}-yearly-chart-${previousYear}`,
+    currentYear: `${currentYear}`,
+    lastYear: `${previousYear}`,
     name: `${game.name}`
   }));
 
   return (
-    <>
-      <div className="overflow-x-auto mt-2">
-        <p className="pb-8 mt-5 text-center px-4 text-2xl md:text-3xl font-semibold">
+    <div className="max-w-4xl mx-auto px-3 md:px-4 pb-8 mt-4">
+      {/* Header Card */}
+      <div className="bg-gradient-to-r from-violet-700 to-violet-600 rounded-xl p-6 mb-8 text-center">
+        <p className="text-xl md:text-2xl font-bold text-white hindi-text">
           <Typewriter
             words={["ईमानदारी ही हमारी पहचान है।"]}
             cursor
@@ -26,34 +31,55 @@ const ChartSattaTable = () => {
             typeSpeed={80}
           />
         </p>
-        <table className="table-auto w-full border-2 border-black text-center text-sm">
+      </div>
+
+      {/* Page Title */}
+      <div className="text-center mb-6">
+        <h1 className="text-2xl md:text-3xl font-bold text-violet-400">
+          📊 Yearly Charts
+        </h1>
+        <p className="text-slate-400 mt-2">Select game to view yearly record</p>
+      </div>
+
+      {/* Table */}
+      <div className="bg-slate-900 rounded-2xl overflow-hidden shadow-sm border border-slate-700">
+        <table className="w-full text-center">
           <thead>
-            <tr className="bg-yellow-400 font-bold text-[#FF0000]">
-              <th className="border-2 border-black px-2 py-2">Games</th>
-              <th className="border-2 border-black px-2 py-2">2025 Charts</th>
-              <th className="border-2 border-black px-2 py-2">2024 Charts</th>
+            <tr className="bg-gradient-to-r from-violet-700 to-violet-600">
+              <th className="px-4 py-4 text-white font-bold text-sm uppercase tracking-wider">
+                🎮 Games
+              </th>
+              <th className="px-4 py-4 text-white font-bold text-sm uppercase tracking-wider">
+                {currentYear}
+              </th>
+              <th className="px-4 py-4 text-white font-bold text-sm uppercase tracking-wider">
+                {previousYear}
+              </th>
             </tr>
           </thead>
           <tbody>
             {sattaLinks.map((link, index) => (
-              <tr key={index}
-                className="bg-[linear-gradient(361deg,#ff7500e0,#ff7a20_0%,#ff3a11d4_100%,#ff0004ad)] font-semibold"
+              <tr
+                key={index}
+                className="hover:bg-slate-700/50 transition-all duration-300 border-b border-slate-700"
               >
-                <td className="border-2 border-black px-2 py-2 text-white sm:max-w-[0]">
-                  <p>{link.name}</p>
+                <td className="px-4 py-4">
+                  <span className="text-slate-300 font-semibold text-base">
+                    {link.name}
+                  </span>
                 </td>
-                <td className="border-2 border-black px-2 bg-orange-500 font-semibold text-black hover:bg-[#f3cf0090] duration-300">
-                  <Link key={link.id} href={link.href}>
-                    <p className="text-base max-sm:text-sm m-0 font-semibold uppercase text-white">
-                      {link.currentYear}
-                    </p>
+                <td className="px-4 py-3">
+                  <Link href={link.href}>
+                    <span className="inline-block bg-amber-500 hover:bg-amber-600 text-white px-6 py-2 rounded-full font-bold text-sm transition-all duration-300 hover:scale-105">
+                      View
+                    </span>
                   </Link>
                 </td>
-                <td className="border-2 border-black px-2 py-2 bg-orange-500 font-semibold text-black hover:bg-[#f3cf0090] duration-300">
-                  <Link key={link.id} href={link.href2}>
-                    <p className="text-base max-sm:text-sm m-0 font-semibold uppercase text-white">
-                      {link.lastYear}
-                    </p>
+                <td className="px-4 py-3">
+                  <Link href={link.href2}>
+                    <span className="inline-block bg-violet-600 hover:bg-violet-700 text-white px-6 py-2 rounded-full font-bold text-sm transition-all duration-300 hover:scale-105">
+                      View
+                    </span>
                   </Link>
                 </td>
               </tr>
@@ -61,7 +87,12 @@ const ChartSattaTable = () => {
           </tbody>
         </table>
       </div>
-    </>
+
+      {/* Bottom Decorative Element */}
+      <div className="mt-8 flex justify-center">
+        <div className="h-1 w-32 bg-gradient-to-r from-transparent via-amber-500 to-transparent rounded-full"></div>
+      </div>
+    </div>
   );
 };
 

@@ -1,45 +1,44 @@
 "use client";
 import { Typewriter } from "react-simple-typewriter";
-import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
 const Contact = ({ setting }) => {
   return (
-    <div className="mx-auto">
+    <div className="mx-auto max-w-2xl px-4 py-8">
       <div className="flex flex-col justify-center items-center">
-        <h1 className="text-3xl max-sm:text-xl text-center px-4 mt-5 font-bold text-gray-800">
-          <Typewriter
-            words={["ईमानदारी ही हमारी पहचान है।"]}
-            cursor
-            cursorBlinking={false}
-            cursorStyle=""
-            typeSpeed={80}
-          />
-        </h1>
-        <div className="bg-gradient-to-r via-yellow-400 to-orange-500 from-orange-500 w-full text-center mt-5 py-4  ">
-          <h2 className="text-4xl lg:text-5xl text-white font-semibold text-theme-accent">
-            Good Luck Satta 👑
+        {/* Header Card */}
+        <div className="bg-gradient-to-r from-violet-700 to-violet-600 rounded-lg p-5 mb-6 w-full text-center">
+          <h1 className="text-xl md:text-2xl font-semibold text-white">
+            <Typewriter
+              words={["ईमानदारी ही हमारी पहचान है।"]}
+              cursor
+              cursorBlinking={false}
+              cursorStyle=""
+              typeSpeed={80}
+            />
+          </h1>
+        </div>
+
+        {/* Site Name */}
+        <div className="bg-amber-500 rounded-lg w-full text-center py-6 mb-6">
+          <h2 className="text-3xl lg:text-4xl text-white font-bold">
+            Good Luck Satta
           </h2>
         </div>
-        <div className="mx-auto max-w-[300px] mt-5 hover:scale-110 transition-all duration-300">
+
+        {/* Contact Section */}
+        <div className="bg-slate-900 border border-slate-700 rounded-lg p-6 w-full text-center shadow-sm">
+          <p className="text-slate-300 mb-4 hindi-text">
+            Game play करने के लिये नीचे लिंक पर क्लिक करे
+          </p>
           <Link
             target="_blank"
             href={`https://wa.me/+${setting?.whatsappNumber}`}
+            className="inline-block bg-green-600 hover:bg-green-500 text-white px-8 py-3 rounded-lg font-semibold transition-colors"
           >
-            <Image
-              className="max-sm:w-[200px] mx-auto max-sm:h-16"
-              width={300}
-              height={100}
-              src="https://i.ibb.co/4RJCLbSB/whatsapp.png"
-              alt="whatsapp"
-            />
+            WhatsApp पर संपर्क करें
           </Link>
-        </div>
-        <div className="mt-5 bg-gradient-to-r via-yellow-400 to-orange-500 from-orange-500 font-semibold text-2xl max-sm:text-xl py-4 text-center px-3 w-full text-white">
-          <span>
-            @{new Date().getFullYear()} Good Luck Satta :: All Rights Reserved
-          </span>
         </div>
       </div>
     </div>

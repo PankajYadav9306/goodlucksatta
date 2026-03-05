@@ -20,16 +20,16 @@ const YearlyTable = ({ year, data }) => {
 
   return (
     <div className="overflow-x-auto">
-      <table className="min-w-full text-center">
+      <table className="min-w-full text-center border-collapse">
         {/* Table Header */}
         <thead>
-          <tr className="bg-gradient2 text-white">
+          <tr className="bg-gradient-to-r from-violet-700 to-violet-600">
             {/* Sticky year column */}
-            <th className="outline bg-amber-500 px-3 py-2 sticky left-0 bg-gradient z-10">
+            <th className="border border-violet-600 bg-violet-700 text-white px-3 py-2.5 sticky left-0 z-10 font-bold">
               {year}
             </th>
             {months.map((month, idx) => (
-              <th key={idx} className="border px-3 py-2">
+              <th key={idx} className="border border-violet-600 px-3 py-2.5 text-white font-medium">
                 {month}
               </th>
             ))}
@@ -37,14 +37,14 @@ const YearlyTable = ({ year, data }) => {
         </thead>
         {/* Table Body */}
         <tbody>
-          {days.map((day) => (
-            <tr key={day}>
+          {days.map((day, rowIndex) => (
+            <tr key={day} className={rowIndex % 2 === 0 ? "bg-slate-800/50" : "bg-slate-800"}>
               {/* Sticky day column */}
-              <td className="outline bg-gradient2 text-white font-semibold px-3 py-2 sticky left-0 z-10">
+              <td className="border border-slate-700 bg-slate-800 text-violet-400 font-semibold px-3 py-2 sticky left-0 z-10">
                 {day}
               </td>
               {months.map((month, idx) => (
-                <td key={idx} className="border px-3 py-2 text-gray-700">
+                <td key={idx} className="border border-slate-700 px-3 py-2 text-slate-300 hover:bg-violet-900/30 transition-colors">
                   {data[month]?.[day] || "xx"}
                 </td>
               ))}
